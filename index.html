@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mahila Kalyan Bunkar Samiti</title>
+
+<!-- SEO -->
+<meta name="description" content="Mahila Kalyan Bunkar Samiti - Handloom Chadar, Bedsheet aur Silk Saree banane wali mahila samiti">
+
+<!-- Simple Styling -->
+<style>
+body { font-family: Arial; margin:0; background:#f5f5f5; }
+header { background:#6a1b9a; color:white; padding:15px; text-align:center; }
+nav { background:#4a148c; padding:10px; text-align:center; }
+nav a { color:white; margin:10px; text-decoration:none; font-weight:bold; }
+section { padding:20px; }
+.card { background:white; padding:15px; margin:10px; border-radius:10px; box-shadow:0 0 5px gray; }
+footer { background:#333; color:white; text-align:center; padding:10px; }
+img { max-width:100%; border-radius:10px; }
+input, button { padding:10px; margin:5px; }
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Mahila Kalyan Bunkar Samiti</h1>
+<p>Haathon se buna, dil se joda</p>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#products">Products</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+<div class="card">
+<h2>Welcome</h2>
+<p>Yah samiti mahilaon dwara chalayi jati hai jahan handloom par sundar chadar, bedsheet aur silk saree banayi jati hai.</p>
+</div>
+</section>
+
+<section id="about">
+<div class="card">
+<h2>About Us</h2>
+<p>Mahila Kalyan Bunkar Samiti ek aisi sanstha hai jahan mahilayein milkar handloom ke madhyam se rojgar prapt karti hain aur sundar kapde banati hain.</p>
+</div>
+</section>
+
+<section id="products">
+<div class="card">
+<h2>Our Products</h2>
+<ul>
+<li>Chadar</li>
+<li>Bedsheet</li>
+<li>Silk Saree</li>
+</ul>
+</div>
+</section>
+
+<section id="gallery">
+<div class="card">
+<h2>Upload Photos / Videos</h2>
+<input type="file" accept="image/*,video/*" onchange="previewFile()">
+<div id="preview"></div>
+</div>
+</section>
+
+<section id="contact">
+<div class="card">
+<h2>Contact Us</h2>
+<p><b>Address:</b> Aman Khel Dev Kua Marg, Sarangpur, Dist. Rajgarh (M.P.)</p>
+<p><b>Mobile:</b> 9399709937</p>
+
+<h3>Location Map</h3>
+<iframe src="https://www.google.com/maps?q=Sarangpur+Madhya+Pradesh&output=embed" width="100%" height="300"></iframe>
+
+<h3>Social Media</h3>
+<a href="#">Facebook</a> |
+<a href="#">Instagram</a> |
+<a href="#">YouTube</a>
+
+</div>
+</section>
+
+<footer>
+<p>© 2026 Mahila Kalyan Bunkar Samiti</p>
+</footer>
+
+<script>
+function previewFile() {
+  const preview = document.getElementById('preview');
+  const file = document.querySelector('input[type=file]').files[0];
+  const reader = new FileReader();
+
+  reader.onloadend = function () {
+    if(file.type.startsWith('image')){
+      preview.innerHTML = `<img src="${reader.result}"/>`;
+    } else if(file.type.startsWith('video')){
+      preview.innerHTML = `<video controls width="100%"><source src="${reader.result}"></video>`;
+    }
+  }
+
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+}
+</script>
+
+</body>
+</html>
